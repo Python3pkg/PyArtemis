@@ -59,7 +59,7 @@ class EntityWorld(object):
     def GetCurrentState(self):
         entities = self.entityManager.GetActiveEntities()
         currentState = {}
-        for e in entities.itervalues():
+        for e in entities.values():
             components = e.GetComponents()
             currentState[e] = components
         return currentState

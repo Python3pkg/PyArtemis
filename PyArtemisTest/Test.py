@@ -16,16 +16,16 @@ class Test(object):
     @classmethod
     def RemovedComponent(cls, entity, component):
         typeComponent = type(component)
-        print "This was the component removed:", typeComponent
+        print("This was the component removed:", typeComponent)
         tempBag = cls.componentPool.get(typeComponent, [])
-        print "Health Component Pool has", len(tempBag), "objects"
+        print("Health Component Pool has", len(tempBag), "objects")
         tempBag.append(component)
         tempBag = cls.componentPool.get(typeComponent, [])
-        print "Health Component Pool now has", len(tempBag), "objects"
+        print("Health Component Pool now has", len(tempBag), "objects")
 
     @classmethod
     def RemovedEntity(cls, entity):
-        print "This was the entity removed:", entity.GetUniqueId()
+        print("This was the entity removed:", entity.GetUniqueId())
 
     @classmethod
     def multi(cls):
@@ -54,14 +54,14 @@ class Test(object):
             dt = datetime.now()
             world.LoopStart()
             systemManager.UpdateSynchronous(ExecutionType.UPDATE)
-            print (datetime.now() - dt).microseconds
+            print((datetime.now() - dt).microseconds)
 
         df = 0
         for i in l:
             i.GetComponent(Health).GetHealth() == 90
             df += 1
 
-        raw_input()
+        input()
     @classmethod
     def multisystem(cls):
         cls.healthBag.append(Health())
@@ -91,7 +91,7 @@ class Test(object):
             dt = datetime.now()
             world.LoopStart()
             systemManager.UpdateSynchronous(ExecutionType.UPDATE)
-            print (datetime.now() - dt).microseconds
+            print((datetime.now() - dt).microseconds)
     @classmethod
     def Main(cls):
         #cls.multi()

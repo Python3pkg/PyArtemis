@@ -16,7 +16,7 @@ class TagManager(object):
         return e
     def GetTagOfEntity(self, entity):
         tag = ''
-        for k, v in self.entityByTag.iteritems():
+        for k, v in self.entityByTag.items():
             if v is entity:
                 tag = k
                 break

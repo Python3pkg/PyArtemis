@@ -8,5 +8,5 @@ class EntityProcessingSystem(EntitySystem):
             return super(EntityProcessingSystem, self).Process()
         raise NotImplementedError
     def ProcessEntities(self, entities):
-        for e in entities.itervalues():
+        for e in entities.values():
             self.Process(e)

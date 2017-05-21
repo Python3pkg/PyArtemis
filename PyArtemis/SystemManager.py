@@ -35,7 +35,7 @@ class SystemManager(object):
     def GetSystems(self):
         return self.mergedBag
     def InitializeAll(self):
-        map(lambda x: x.Initialize(), self.mergedBag)
+        list(map(lambda x: x.Initialize(), self.mergedBag))
     def UpdatebagSync(self, temp):
         for t in temp:
             t.Process()

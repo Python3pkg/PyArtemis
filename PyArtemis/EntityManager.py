@@ -54,7 +54,7 @@ class EntityManager(object):
             event(entity)
     def RemoveComponentsOfEntity(self, entity):
         id = entity.GetId()
-        for componentTypes in self.componentsByType.itervalues():
+        for componentTypes in self.componentsByType.values():
             if id in componentTypes:
                 for event in self.events[EntityManager.REMOVED_COMPONENT_EVENT]:
                     event(entity, componentTypes[id])
@@ -104,7 +104,7 @@ class EntityManager(object):
     def GetComponents(self, entity):
         self.entityComponents = []
         eId = entity.GetId()
-        for components in self.componentsByType.itervalues():
+        for components in self.componentsByType.values():
             if components: #TODO
                 component = components.get(eId)
                 if component: #TODO
